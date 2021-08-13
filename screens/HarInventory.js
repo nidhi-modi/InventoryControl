@@ -1,5 +1,5 @@
 import React, { Component, useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, BackHandler, TextInput, Image, Alert, Modal, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, Text, TouchableOpacity, BackHandler, TextInput, Image, Alert, Modal, ActivityIndicator, Platform } from 'react-native'
 import AsyncStorage from '@react-native-community/async-storage';
 import { ScrollView } from 'react-native';
 import { CheckBox } from 'react-native-elements'
@@ -257,7 +257,7 @@ export default class HarInventory extends React.Component {
 
                     </View>
 
-                    <Text style={styles.headerText}>Inventory Control</Text>
+                    <Text style={[Platform.OS == 'android'?styles.headerText: styles.headerTextIos]}>Inventory Control</Text>
 
 
                     <View>
@@ -320,7 +320,7 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>MRB Shoes</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>MRB Shoes</Text>
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/shoe.png')} />
                                 </View>
@@ -328,12 +328,12 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
-                                <View style={{ marginBottom: 8 }}>
+                                <View style={{ marginTop: 8 }}/>
 
                                     <View style={styles.borderEdit2}>
-                                        <TextInput style={styles.textInputStyle2}
+                                        <TextInput style={[Platform.OS == 'android'?styles.textInputStyle2: styles.textInputStyle2Ios]}
                                             multiline={false}
                                             autoCorrect={false}
                                             enablesReturnKeyAutomatically={true}
@@ -345,8 +345,6 @@ export default class HarInventory extends React.Component {
                                         />
 
                                     </View>
-
-                                </View>
 
                             </View>
                         </View>
@@ -362,7 +360,9 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Belt Bags</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Belt Bags</Text>
+                                <View style={{ marginTop: 8 }}/>
+
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/bags.png')} />
                                 </View>
@@ -370,11 +370,11 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle2}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle2: styles.textInputStyle2Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -402,7 +402,9 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Lab Coats</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Lab Coats</Text>
+                                <View style={{ marginTop: 8 }}/>
+
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/coat.png')} />
                                 </View>
@@ -410,11 +412,11 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle2}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle2: styles.textInputStyle2Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -442,7 +444,9 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Overall</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Overall</Text>
+                                <View style={{ marginTop: 8 }}/>
+
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/coat.png')} />
                                 </View>
@@ -450,11 +454,11 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle2}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle2: styles.textInputStyle2Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -482,7 +486,10 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Booties</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Booties</Text>
+                                
+                                <View style={{ marginTop: 8 }}/>
+
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/boots.png')} />
                                 </View>
@@ -490,11 +497,11 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle2}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle2: styles.textInputStyle2Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -522,37 +529,37 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Gloves</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Gloves</Text>
                                 <View style={{ marginTop: 8 }}></View>
 
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/gloves.png')} />
                                 </View>
 
-                                <Text style={styles.titleText2}></Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText2: styles.titleText2Ios]}></Text>
 
                             </View>
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}></Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}></Text>
 
 
-                                <Text style={styles.titleText2}>Cut Proof</Text>
-                                <Text style={styles.titleText2}>Dropping</Text>
-                                <Text style={styles.titleText2}>Latex</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText2: styles.titleText2Ios]}>Cut Proof</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText2: styles.titleText2Ios]}>Dropping</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText2: styles.titleText2Ios]}>Latex</Text>
 
                             </View>
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
                                 <View style={{ marginTop: 8 }}></View>
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle3}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle3: styles.textInputStyle3Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -570,7 +577,7 @@ export default class HarInventory extends React.Component {
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle3}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle3: styles.textInputStyle3Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -588,7 +595,7 @@ export default class HarInventory extends React.Component {
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle3}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle3: styles.textInputStyle3Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -616,20 +623,20 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Knifes</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Knifes</Text>
                                 <View style={{ marginTop: 8 }}></View>
 
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/knife.png')} />
                                 </View>
 
-                                <Text style={styles.titleText2}></Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText2: styles.titleText2Ios]}></Text>
 
                             </View>
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}></Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}></Text>
 
 
                                 <Image source={require('../assets/blue.png')} />
@@ -644,12 +651,12 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={styles.titleText}>Quantity</Text>
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Quantity</Text>
 
                                 <View style={{ marginBottom: 8 }}></View>
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle3}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle3: styles.textInputStyle3Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -666,7 +673,7 @@ export default class HarInventory extends React.Component {
 
 
                                 <View style={styles.borderEdit2}>
-                                    <TextInput style={styles.textInputStyle3}
+                                    <TextInput style={[Platform.OS == 'android'?styles.textInputStyle3: styles.textInputStyle3Ios]}
                                         multiline={false}
                                         autoCorrect={false}
                                         enablesReturnKeyAutomatically={true}
@@ -686,11 +693,11 @@ export default class HarInventory extends React.Component {
 
                     <View style={styles.inBtnmarginDimension}></View>
 
-                    <Text style={styles.bottomText}>Is the inventory form completed ?</Text>
+                    <Text style={[Platform.OS == 'android'?styles.bottomText: styles.bottomTextIos]}>Is the inventory form completed ?</Text>
 
                     <View style={styles.inBtnmarginDimension}></View>
 
-                    <Text style={styles.bottomText}>Please tick the below box if it is done</Text>
+                    <Text style={[Platform.OS == 'android'?styles.bottomText: styles.bottomTextIos]}>Please tick the below box if it is done</Text>
 
 
                     <CheckBox style={styles.styleCheckbox}
@@ -700,7 +707,7 @@ export default class HarInventory extends React.Component {
                         uncheckedColor='red'
                         checkedColor='green'
                         checked={this.state.checked}
-                        textStyle={{ fontSize: 18, fontFamily: "Sedan_Regular" }}
+                        textStyle={[Platform.OS == 'android'?{ fontSize: 18, fontFamily: "Sedan_Regular" }: { fontSize: 18}]}
                         containerStyle={{ backgroundColor: 'transparent', border: 0 }}
                         onPress={() => this.changeCheckbox()}
                     />
@@ -748,11 +755,27 @@ const styles = StyleSheet.create({
 
     },
 
+    titleTextIos: {
+
+        fontSize: 18,
+        color: 'black',
+        textDecorationLine: 'underline'
+
+    },
+
     bottomText: {
 
         fontSize: 18,
         color: 'black',
         fontFamily: "Sedan_Regular",
+        textAlign: 'center'
+
+    },
+
+    bottomTextIos: {
+
+        fontSize: 18,
+        color: 'black',
         textAlign: 'center'
 
     },
@@ -764,6 +787,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: 'white',
         fontFamily: "Sedan_Regular",
+        marginBottom: 5
+
+    },
+
+    titleText2Ios: {
+
+        fontSize: 18,
+        color: 'white',
         marginBottom: 5
 
     },
@@ -846,11 +877,28 @@ const styles = StyleSheet.create({
 
     },
 
+    textInputStyle2Ios: {
+        fontSize: 20,
+        color: 'white',
+        padding: 8,
+        height: 50,
+        textAlign: 'center',
+
+    },
+
     textInputStyle3: {
         fontSize: 16,
         color: 'white',
         padding: 8,
         fontFamily: "Sedan_Regular",
+        textAlign: 'center',
+
+    },
+
+    textInputStyle3Ios: {
+        fontSize: 16,
+        color: 'white',
+        padding: 8,
         textAlign: 'center',
 
     },
@@ -861,6 +909,12 @@ const styles = StyleSheet.create({
         fontSize: 22,
         color: 'black',
         fontFamily: "Sedan_Regular",
+    },
+
+    headerTextIos: {
+
+        fontSize: 22,
+        color: 'black',
     },
 
     borderEdit: {
