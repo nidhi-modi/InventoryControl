@@ -362,7 +362,6 @@ export default class HarInventory extends React.Component {
 
                                 <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Belt Bags</Text>
                                 <View style={{ marginTop: 8 }}/>
-
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/bags.png')} />
                                 </View>
@@ -445,8 +444,8 @@ export default class HarInventory extends React.Component {
                             <View style={styles.flexSettings}>
 
                                 <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Overall</Text>
-                                <View style={{ marginTop: 8 }}/>
 
+                                <View style={{ marginTop: 8 }}/>
                                 <View style={styles.imageMargin}>
                                     <Image source={require('../assets/coat.png')} />
                                 </View>
@@ -486,8 +485,7 @@ export default class HarInventory extends React.Component {
 
                             <View style={styles.flexSettings}>
 
-                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Booties</Text>
-                                
+                                <Text style={[Platform.OS == 'android'?styles.titleText: styles.titleTextIos]}>Booties</Text>              
                                 <View style={{ marginTop: 8 }}/>
 
                                 <View style={styles.imageMargin}>
@@ -1031,5 +1029,3 @@ const styles = StyleSheet.create({
         resizeMode: 'cover'
     }
 })
-
-
