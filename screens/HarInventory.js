@@ -537,7 +537,7 @@ export default class HarInventory extends React.Component {
                                 <Text style={[Platform.OS == 'android' ? styles.titleText : styles.titleTextIos]}>Gloves</Text>
                                 <View style={{ marginTop: 8 }}></View>
 
-                                <View style={styles.imageMargin}>
+                                <View style={styles.imageMarginGloves}>
                                     <Image source={require('../assets/gloves.png')} />
                                 </View>
 
@@ -791,6 +791,11 @@ const styles = StyleSheet.create({
     imageMargin: {
 
         marginLeft: 15
+    },
+
+    imageMarginGloves: {
+
+       
     },
 
     styleCheckbox: {
